@@ -1,0 +1,770 @@
+  /* HEADER */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@800&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Mulish", sans-serif;
+  }
+
+  .banner {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+      url(./images/thorwall.jpg);
+    background-size: cover;
+    background-position: center;
+  }
+
+  .navbar {
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    width: 400px;
+    cursor: pointer;
+    margin-top: -2%;
+    margin-left: -2%;
+  }
+
+  .navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+  }
+
+  .navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+  }
+  /*
+  The ::after selector inserts something after the content of each selected element(s).
+  Use the content property to specify the content to insert.
+  */
+  .navbar ul li::after {
+    content: "";
+    height: 3px;
+    width: 0;
+    background: #b80632;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+  }
+
+  .navbar ul li:hover::after {
+    width: 100%;
+  }
+
+  .content {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: #fff;
+  }
+
+  .content h1 {
+    font-size: 70px;
+    margin-top: 80px;
+  }
+
+  .content p {
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+  }
+
+  .login-btn {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #b80632;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+  /*The overflow property specifies whether to clip the content 
+  or to add scrollbars when the content of an element is too big to fit in the specified area.*/
+
+  .signup-btn {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #b80632;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover {
+    background: #b80632;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+  }
+
+  button:hover span {
+    width: 100%;
+  }
+
+  button:hover {
+    border: none;
+  }
+
+  /* PRODUCTS */
+  .product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+  }
+
+  .product-category {
+    padding: 0 10vw;
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+  }
+
+  .product-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .product-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 450px;
+    margin-right: 40px;
+  }
+
+  .product-image {
+    position: relative;
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+  }
+
+  .product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .discount-tag {
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    color: #ff7d7d;
+    right: 10px;
+    top: 10px;
+    text-transform: capitalize;
+  }
+
+  .card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+  }
+
+  .product-card:hover .card-btn {
+    opacity: 1;
+  }
+
+  .card-btn:hover {
+    background: #ff7d7d;
+    color: #fff;
+  }
+
+  .product-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+  }
+
+  .product-brand {
+    text-transform: uppercase;
+  }
+
+  .product-short-description {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+  }
+
+  .price {
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .actual-price {
+    margin-left: 20px;
+    opacity: 0.5;
+    text-decoration: line-through;
+  }
+
+  .pre-btn,
+  .nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, #fff 100%);
+    cursor: pointer;
+    z-index: 8;
+  }
+
+  .pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+  }
+
+  .nxt-btn {
+    right: 0;
+  }
+
+  .pre-btn img,
+  .nxt-btn img {
+    opacity: 0.2;
+  }
+
+  .pre-btn:hover img,
+  .nxt-btn:hover img {
+    opacity: 1;
+  }
+
+  .textbyet7arak{
+position: relative;
+width:fit-content;
+  }
+.textbyet7arak::before{
+content: "";
+position: absolute;
+width: 0;
+left: 0;
+height: 100%;
+background-color: #b80632;
+animation: reveal 1s ease-out 0.5s forwards;
+z-index: 1;
+
+}
+@keyframes reveal{
+0% {
+left: 0;
+right: 100%;
+}
+50%{
+left: 0;
+right:0;
+width: 100%;
+
+}
+100%{
+left: 100%;
+width: 0;
+}
+}
+.textbyet7arak h1{
+margin:0;
+font-family:"Poppins","sans-serif";
+text-transform: uppercase;
+color: black;
+animation: fade 0.1s linear 0.95s forwards;
+opacity:0;
+}
+@keyframes fade{
+from{
+opacity:0;
+
+}
+to{
+  opacity:1;
+}
+}
+
+
+  .section2{
+    overflow: hidden;
+  }
+  .cont{
+  position: absolute;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 95%;
+  height:60%;
+  margin-inline: 3%;
+
+  }
+  .box1{
+    flex:1;
+    order: 1;
+    
+    padding :10px;
+    height:90%;
+    background-color: #60b3f4;
+    }
+    .box2{
+    flex:1;
+    order: 2;
+    padding :10px;
+    height: 90%;
+    background-color: #85dc97;
+    }
+  .box1 p{
+
+font-size: large;
+  }
+  .box1 h2{
+margin-top: 20%;
+
+  }
+  .box2 p{
+
+font-size: large;
+  }
+  .box2 h2{
+margin-top: 20%;
+
+  }
+  .iron{
+margin-top: -25%;
+margin-right: -3%;
+  }
+  .chris{
+    margin-top: -25%;
+margin-right: -1.5%;
+  }
+  
+    .but{
+      padding: 9px 25px;
+      background-color: black;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      color: white;
+      font-size: 120%;
+      font-family: "Montserrat", sans-serif; 
+     }
+
+     .but:hover{
+      background-color: white;
+      color:black;
+      font-size: 100%;
+      border:1px solid white;
+     }
+  
+  .section3{
+overflow: hidden;
+position: absolute;
+margin-top: 30%;
+height: min-content;
+width: 100%;
+
+  }
+  .brands{
+display: inline-flex;
+justify-content: space-around;
+flex-wrap: wrap;
+align-items: center;
+overflow: hidden;
+padding: 10px;
+height: 50%;
+width: 90%;
+height: 50%;
+width: 100%;
+  }
+  .shadowing{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    border-radius: 30px;
+    box-shadow:  -5px -5px 30px #cec5c5,
+                   5px 5px 30px #ffffff;
+                   width: 150px;
+                   height: 100px;
+                   justify-content: center;
+                   align-items: center;
+                   padding: 10px;
+  }
+  .brandstyle{
+font-size: 150%;
+color:black;
+font-weight: bolder;
+
+  }
+  .section4{
+    overflow: hidden;
+    margin-top: 43%;
+  }
+  .zoro{
+    width: 95%;
+    height: 100vh;
+    background-image: url(./images/zoro.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-inline: 3%;
+  }
+  .img{
+flex:1;
+order:2;
+margin-top: 17%;
+
+  }
+  .katibezoro{
+margin-left: 35%;
+order:1;
+justify-content: center;
+align-items: center;
+height: 40%;
+
+  }
+  .katibezoro h2{
+    font-size: 200%;
+    background: -webkit-linear-gradient(#1e3217,#8bbd52);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+  }
+.katibezoro p{
+  font-size: 150%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 500;
+
+}
+.katibezoro button{
+  padding: 9px 25px;
+      background-color: #1e3217;
+      border: 2px solid #8bbd52;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      color: #8bbd52;
+      font-size: 120%;
+      font-family: "Montserrat", sans-serif; 
+
+
+}
+.katibezoro button:hover{
+  border: 2px solid #1e3217;
+  background-color: #8bbd52;
+  color:#1e3217;
+  font-size: 100%;
+  font-weight: 600;
+
+}
+.media{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 88.25%;
+  height:20%;
+  background-color:#000000;
+  padding-left: 50px;
+  padding-right: 50px;
+  margin-top: 58.7%;
+  border: 1px solid black;
+
+ }
+ .mediawrapper{
+position: absolute;
+display:flex;
+height: fit-content;
+width: fit-content;
+
+align-items: center;
+justify-content: center;
+  
+ }
+ 
+ .wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+
+  
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+  background: #4267B2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button:nth-child(3):hover .icon{
+  background: #E1306C;
+}
+.wrapper .button:nth-child(4):hover .icon{
+  background: #333;
+}
+.wrapper .button:nth-child(5):hover .icon{
+  background: #ff0000;
+}
+.wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1) span{
+  color: #4267B2;
+}
+.wrapper .button:nth-child(2) span{
+  color: #1DA1F2;
+}
+.wrapper .button:nth-child(3) span{
+  color: #E1306C;
+}
+.wrapper .button:nth-child(4) span{
+  color: #333;
+}
+.wrapper .button:nth-child(5) span{
+  color: #ff0000;
+}
+
+.footer {
+  background-color: #414141;
+  width: 100%;
+  text-align: left;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 50px;
+  margin-top: 15%;
+}
+
+.footer .footer-left,
+.footer .footer-center,
+.footer .footer-right {
+  display: inline-block;
+  vertical-align: top;
+}
+
+
+/* footer left*/
+
+.footer .footer-left {
+  width: 33%;
+  padding-right: 15px;
+}
+
+.footer .about {
+  line-height: 20px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer .about span {
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.footer .icons {
+  margin-top: 25px;
+}
+
+.footer .icons a {
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+  background-color: #33383b;
+  border-radius: 2px;
+  font-size: 20px;
+  color: #ffffff;
+  text-align: center;
+  line-height: 35px;
+  margin-right: 3px;
+  margin-bottom: 5px;
+}
+
+
+/* footer center*/
+
+.footer .footer-center {
+  width: 30%;
+}
+
+.footer .footer-center i {
+  background-color: #33383b;
+  color: #ffffff;
+  font-size: 25px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 42px;
+  margin: 10px 15px;
+  vertical-align: middle;
+}
+
+.footer .footer-center i.fa-envelope {
+  font-size: 17px;
+  line-height: 38px;
+}
+
+.footer .footer-center p {
+  display: inline-block;
+  color: #ffffff;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.footer .footer-center p span {
+  display: block;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 2;
+}
+
+.footer .footer-center p a {
+  color: #0099ff;
+  text-decoration: none;
+}
+
+
+/* footer right*/
+
+.footer .footer-right {
+  width: 35%;
+}
+
+.footer h2 {
+  color: #ffffff;
+  font-size: 36px;
+  font-weight: normal;
+  margin: 0;
+}
+
+.footer h2 span {
+  color: #0099ff;
+}
+
+.footer .menu {
+  color: #ffffff;
+  margin: 20px 0 12px;
+  padding: 0;
+}
+
+.footer .menu a {
+  display: inline-block;
+  line-height: 1.8;
+  text-decoration: none;
+  color: inherit;
+}
+
+.footer .menu a:hover {
+  color: #0099ff;
+}
+
+.footer .name {
+  color: #0099ff;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .footer {
+    font-size: 14px;
+  }
+  .footer .footer-left,
+  .footer .footer-center,
+  .footer .footer-right {
+    display: block;
+    width: 100%;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+  .footer .footer-center i {
+    margin-left: 0;
+  }
+}
